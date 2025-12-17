@@ -1,0 +1,271 @@
+# Si<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singhbhum Survivor | NGO</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background: #1b5e20;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 36px;
+    }
+    header p {
+      font-size: 18px;
+    }
+    nav {
+      background: #2e7d32;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      color: #1b5e20;
+      margin-bottom: 15px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+    .join {
+      background: #e8f5e9;
+      text-align: center;
+    }
+    .join button {
+      background: #1b5e20;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background: #1b5e20;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .contact a {
+      color: #1b5e20;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    input, select {
+      padding: 10px;
+      width: 90%;
+      max-width: 400px;
+      margin: 8px 0;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:#fff;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      text-decoration:none;
+      box-shadow:0 4px 8px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>SINGHBHUM SURVIVOR</h1>
+  <p>Empowering Rural Education. Transforming Lives.</p>
+  <p><em>"We can’t help everyone, but everyone can help someone."</em></p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#work">Our Work</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#donate">Donate</a>
+  <a href="#join">Join Us</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/917903315069" class="whatsapp" target="_blank">💬</a>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p><strong>Singhbhum Survivor</strong> is a grassroots NGO working in West Singhbhum, Jharkhand. Grounded in our NSS roots, we work with rural communities to dismantle barriers to learning and spread awareness about the importance of education.</p>
+  <p><strong>Mission:</strong> To bridge the gap in rural education by mobilizing the energy of students and the expertise of professionals, empowering the next generation with literacy, skills, and foundational knowledge needed to thrive.</p>
+</section>
+
+<section id="work">
+  <h2>Our Work</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Education</h3>
+      <p>We organize learning classes, distribute books and study materials, and mentor rural students.</p>
+    </div>
+    <div class="card">
+      <h3>Awareness Campaigns</h3>
+      <p>We sensitize parents and communities about the transformative power of education.</p>
+    </div>
+    <div class="card">
+      <h3>Clothes Distribution</h3>
+      <p>We conduct cloth distribution drives to support dignity and basic needs.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Photo Gallery</h2>
+  <div class="cards">
+    <img src="images/photo1.jpg" style="width:100%;border-radius:8px;">
+    <img src="images/photo2.jpg" style="width:100%;border-radius:8px;">
+    <img src="images/photo3.jpg" style="width:100%;border-radius:8px;">
+  </div>
+</section>
+
+<section id="donate" class="join">
+  <h2>Donate & Support</h2>
+  <p>Your small contribution can help us educate a child and support rural families.</p>
+  <p><strong>UPI ID:</strong> 7903315069@ybl</p>
+  <button>Donate Now</button>
+</section>
+
+<section id="join" class="join">
+  <h2>Join Us</h2>
+  <p>If you are a student, teacher, or professional and want to make a real impact, join us as a volunteer.</p>
+  <p><strong>One hour of your time can change a child’s future.</strong></p>
+  <button onclick="openJoinForm()">Join as Volunteer</button>
+</section>
+
+<section id="join-form" class="join" style="display:none;">
+  <h2>Volunteer Registration</h2>
+
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="text" id="phone" placeholder="Phone / WhatsApp Number">
+
+  <select id="role">
+    <option value="Teaching">Teaching</option>
+    <option value="Field Work">Field Work</option>
+    <option value="Donation Support">Donation Support</option>
+    <option value="Social Media">Social Media</option>
+  </select>
+
+  <br><br>
+  <button onclick="sendWhatsApp()">Submit & Join</button>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p><strong>Location:</strong> West Singhbhum, Jharkhand</p>
+  <p><strong>Phone / WhatsApp:</strong> <a href="tel:+917903315069">+91 7903315069</a></p>
+  <p><strong>Email:</strong> thesinghbhumsurvivors@gmail.com</p>
+</section>
+
+<footer>
+  <p>© 2025 Singhbhum Survivor NGO | All Rights Reserved</p>
+</footer>
+
+<script>
+function openJoinForm(){
+  document.getElementById("join-form").style.display = "block";
+  window.location.href = "#join-form";
+}
+
+function sendWhatsApp(){
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let role = document.getElementById("role").value;
+
+  let message =
+    "Hello Singhbhum Survivor,%0A" +
+    "I want to join as a volunteer.%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Role: " + role;
+
+  window.open("https://wa.me/917903315069?text=" + message, "_blank");
+}
+</script>
+
+</body>
+</html>
+mple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
