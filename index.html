@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Singhbhum Survivor | NGO</title>
+
   <style>
     body {
       margin: 0;
@@ -79,8 +80,33 @@
       font-weight: bold;
       text-decoration: none;
     }
+    input, select {
+      padding: 10px;
+      width: 90%;
+      max-width: 400px;
+      margin: 8px 0;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:#fff;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      text-decoration:none;
+      box-shadow:0 4px 8px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -92,23 +118,14 @@
 <nav>
   <a href="#about">About</a>
   <a href="#work">Our Work</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#donate">Donate</a>
   <a href="#join">Join Us</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <!-- Floating WhatsApp Button -->
-<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp" target="_blank">💬</a>
-<style>
-.whatsapp{
-  position:fixed; bottom:20px; right:20px;
-  background:#25D366; color:#fff;
-  width:55px; height:55px;
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-size:28px; text-decoration:none;
-  box-shadow:0 4px 8px rgba(0,0,0,0.3);
-}
-</style>
+<a href="https://wa.me/917903315069" class="whatsapp" target="_blank">💬</a>
 
 <section id="about">
   <h2>About Us</h2>
@@ -146,8 +163,7 @@
 <section id="donate" class="join">
   <h2>Donate & Support</h2>
   <p>Your small contribution can help us educate a child and support rural families.</p>
-  <p><strong>UPI / Bank Details:</strong></p>
-  <p>UPI ID: 7903315069@ybl</p>
+  <p><strong>UPI ID:</strong> 7903315069@ybl</p>
   <button>Donate Now</button>
 </section>
 
@@ -155,7 +171,24 @@
   <h2>Join Us</h2>
   <p>If you are a student, teacher, or professional and want to make a real impact, join us as a volunteer.</p>
   <p><strong>One hour of your time can change a child’s future.</strong></p>
-  <button>Join as Volunteer</button>
+  <button onclick="openJoinForm()">Join as Volunteer</button>
+</section>
+
+<section id="join-form" class="join" style="display:none;">
+  <h2>Volunteer Registration</h2>
+
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="text" id="phone" placeholder="Phone / WhatsApp Number">
+
+  <select id="role">
+    <option value="Teaching">Teaching</option>
+    <option value="Field Work">Field Work</option>
+    <option value="Donation Support">Donation Support</option>
+    <option value="Social Media">Social Media</option>
+  </select>
+
+  <br><br>
+  <button onclick="sendWhatsApp()">Submit & Join</button>
 </section>
 
 <section id="contact" class="contact">
@@ -169,6 +202,27 @@
   <p>© 2025 Singhbhum Survivor NGO | All Rights Reserved</p>
 </footer>
 
+<script>
+function openJoinForm(){
+  document.getElementById("join-form").style.display = "block";
+  window.location.href = "#join-form";
+}
+
+function sendWhatsApp(){
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let role = document.getElementById("role").value;
+
+  let message =
+    "Hello Singhbhum Survivor,%0A" +
+    "I want to join as a volunteer.%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Role: " + role;
+
+  window.open("https://wa.me/917903315069?text=" + message, "_blank");
+}
+</script>
+
 </body>
 </html>
-
